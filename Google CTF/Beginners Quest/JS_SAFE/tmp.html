@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>JS Safe - the leading localStorage based safe solution with advanced obfuscation technology</title>
+    <!--
+Advertisement:
+Looking for a hand-crafted, browser based virtual safe to store your most
+interesting secrets? Look no further, you have found it. You can order your own
+by sending a mail to js_safe@example.com. When ordering, please specify the
+password you'd like to use to open and close the safe and the content you'd
+like to store. We'll hand craft a unique safe just for you, that only works
+with your password of choice and contains your secret. (We promise we won't
+peek when handling your data.)
+-->
+    <style>
+      body {
+        text-align: center;
+        background: #000000;
+      }
+
+      input {
+        font-size: 200%;
+        margin-top: 5em;
+        text-align: center;
+        width: 26em;
+        background: #6c6c6c;
+        outline: none;
+        border: none;
+        color: #fcfcfc;
+      }
+
+      #result {
+        margin-top: 2em;
+        font-size: 300%;
+        font-family: monospace;
+        font-weight: bold;
+      }
+
+      body.granted>#result::before {
+        content: "Access Granted";
+        color: green;
+      }
+
+      body.denied>#result::before {
+        content: "Access Denied";
+        color: red;
+      }
+
+      #content {
+        display: none;
+      }
+
+      body.granted #content {
+        display: initial;
+      }
+
+      .wrap {
+        display: inline-block;
+        margin-top: 50px;
+        perspective: 800px;
+        perspective-origin: 50% 100px;
+      }
+
+    </style>
+    <script src="./tmp.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <div>
+      <!-- <input id="keyhole" autofocus onchange="open_safe()" placeholder="Key"> -->
+      <input id="keyhole" autofocus onclick="open_safe()" placeholder="Key" value="CTF{0aA_@!?-}">
+    </div>
+    <div class="wrap">
+      <div class="cube">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+    </div>
+    <div id="result">
+    </div>
+    <div>
+      <input id="content">
+    </div>
+  </body>
+
+</html>
